@@ -12,14 +12,23 @@ public class DllTest : MonoBehaviour
     [DllImport("OpenCVDLL")]
     private static extern void FlipImage(ref Color32[] rawImage, int width, int height);
 
+    [DllImport("OpenCVDLL")]
+    private static extern void CaptureVideo();
+
     private void Awake()
     {
-        texture = image.sprite.texture;
+        //texture = image.sprite.texture;
 
         flipBtn.onClick.AddListener(() =>
         {
-            CallFlipImage(texture);
+            CallCaptureVideo();
         });
+    }
+
+    private void CallCaptureVideo()
+    {
+        Debug.Log($">>> CallCaptureVideo");
+        CaptureVideo();
     }
 
     private void CallFlipImage(Texture2D texture)
