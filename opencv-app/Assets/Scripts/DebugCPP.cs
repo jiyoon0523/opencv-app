@@ -7,12 +7,9 @@ using UnityEngine;
 
 public class DebugCPP : MonoBehaviour
 {
-    [DllImport("OpenCVDLL", CallingConvention= CallingConvention.StdCall)]
-    //[DllImport("OpenCVDLL")]
+    [DllImport("OpenCVDLL")]
     static extern void RegisterDebugCallback(debugCallback cb);
-    [DllImport("OpenCVDLL", CallingConvention = CallingConvention.StdCall)]
-    //[DllImport("OpenCVDLL", CallingConvention = CallingConvention.Cdecl)]
-    //[DllImport("OpenCVDLL")]
+    [DllImport("OpenCVDLL")]
 
     static extern void RemoveDebugCallback();
 
